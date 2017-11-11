@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fadingEdge="vertical|horizontal"
+    android:scrollbars="vertical"
+    android:background="#333333"
+    android:scrollbarSize="5dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Week #"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/weekcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                />
+
+           <TextView
+               android:id="@+id/randDemand"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="24sp"
+               android:textColor="#FEFEFE"
+               android:layout_weight="1"
+
+               />
+
+            <Button
+                android:id="@+id/GenBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generate Demand"
+                android:onClick="generateDemand"
+                android:minWidth="50dp"
+                android:background="#2196F3"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                />
+
+        </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retailer"
+                android:textColor="#FEFEFE"
+                android:layout_gravity="center_horizontal"
+                android:textSize="24sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/cusDemand"
+                android:textColor="#FEFEFE"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_weight="1"
+
+                android:textSize="24sp"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                                   "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+
+            <TextView
+                android:id="@+id/retSupply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:textSize="24sp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incoming Demand"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                  "
+                android:layout_weight="1"
+                android:textColor="#FEFEFE"
+                android:textSize="18sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incoming Supply"
+                android:layout_weight="1"
+                android:textColor="#FEFEFE"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/RetStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                         "
+                android:layout_weight="2"
+                />
+
+            <TextView
+                android:id="@+id/RetBO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stock"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                               "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back Order"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/retDemand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FEFEFE"
+            android:layout_gravity="center_horizontal"
+            android:width="200dp"
+            android:inputType="number"
+            android:text="" />
+
+        <Button
+            android:id="@+id/retBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Demand"
+            android:onClick="wholesalerWork"
+            android:layout_gravity="center_horizontal"
+            android:minWidth="50dp"
+            android:background="#2196F3"
+            style="@style/AppTheme.RoundedCornerMaterialButton"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wholesaler"
+            android:textColor="#FEFEFE"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/wholeDem"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+
+                android:textSize="24sp"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                                   "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+
+            <TextView
+                android:id="@+id/wholeSupply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:textSize="24sp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incoming Demand"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                  "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incoming Supply"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/WholeStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                         "
+                android:layout_weight="2"
+                />
+
+            <TextView
+                android:id="@+id/WholeBO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stock"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                               "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back Order"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/wholeDemand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FEFEFE"
+            android:inputType="number"
+            android:width="200dp"
+            />
+
+        <Button
+            android:id="@+id/wholeBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Demand"
+            android:onClick="distributorwork"
+            android:layout_gravity="center_horizontal"
+            android:minWidth="50dp"
+            android:background="#2196F3"
+            style="@style/AppTheme.RoundedCornerMaterialButton"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distributor"
+            android:textColor="#FEFEFE"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/DisDem"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+
+                android:textSize="24sp"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                                   "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+
+            <TextView
+                android:id="@+id/DisSupply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:textSize="24sp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incoming Demand"
+                android:layout_weight="1"
+                android:textColor="#FEFEFE"
+                android:textSize="18sp"/>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                  "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incoming Supply"
+                android:layout_weight="1"
+                android:textColor="#FEFEFE"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/DisStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                         "
+                android:layout_weight="2"
+                />
+
+            <TextView
+                android:id="@+id/DisBO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stock"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                               "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back Order"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/DisDemand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FEFEFE"
+            android:layout_gravity="center_horizontal"
+            android:width="200dp"
+            android:inputType="number"
+            />
+
+        <Button
+            android:id="@+id/DisBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Demand"
+            android:onClick="FactoryWork"
+            android:layout_gravity="center_horizontal"
+            android:minWidth="50dp"
+            android:background="#2196F3"
+            style="@style/AppTheme.RoundedCornerMaterialButton"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Factory"
+            android:textColor="#FEFEFE"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/FactDem"
+                android:textColor="#FEFEFE"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_weight="1"
+
+                android:textSize="24sp"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                                   "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+
+            <TextView
+                android:id="@+id/FactSupply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:textSize="24sp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incoming Demand"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                  "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outgoing Supply"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/FactStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                         "
+                android:layout_weight="2"
+                />
+
+            <TextView
+                android:id="@+id/FactBO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="24sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stock"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                               "
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back Order"
+                android:textColor="#FEFEFE"
+                android:layout_weight="1"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+
+
+        <EditText
+            android:id="@+id/FactOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:width="200dp"
+            android:textColor="#FEFEFE"
+            android:inputType="number"
+            android:layout_gravity="center_horizontal"
+
+            />
+
+        <Button
+            android:id="@+id/FactBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Factory Order"
+            android:onClick="factorydemands"
+            android:layout_gravity="center_horizontal"
+            android:minWidth="50dp"
+            android:background="#2196F3"
+            style="@style/AppTheme.RoundedCornerMaterialButton"
+            />
+
+
+            <TextView
+                android:id="@+id/finCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="0"
+                android:textColor="#FEFEFE"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                />
+
+
+
+            <Button
+                android:id="@+id/CostBt"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calculate Cost"
+                android:onClick="Calweekcost"
+                android:layout_gravity="center_horizontal"
+                android:minWidth="50dp"
+                android:height="36dp"
+                android:background="#2196F3"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_marginBottom="50dp"
+                />
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/inventoryGraphBt"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inventory vs Weeks"
+                android:onClick="plotInventory"
+                android:layout_gravity="left"
+                android:width="120dp"
+                android:minWidth="50dp"
+                android:height="36dp"
+                android:background="#2196F3"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                />
+            <Button
+                android:id="@+id/demandGraphBt"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Demand vs Weeks"
+                android:onClick="plotDemand"
+                android:layout_gravity="center_horizontal"
+                android:width="120dp"
+                android:minWidth="50dp"
+                android:height="36dp"
+                android:background="#2196F3"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                />
+            <Button
+                android:id="@+id/GraphBt"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cost vs Weeks"
+                android:onClick="plotGraph"
+                android:layout_gravity="right"
+                android:width="120dp"
+                android:minWidth="50dp"
+                android:height="36dp"
+                android:background="#2196F3"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

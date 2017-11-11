@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BeerGame</string>
+    <string name="action_settings">Settings</string>
+    <string name="playbt">Next</string>
+    <string name="welcomeText">Welcome to Beer Game</string>
+    <string name="instr">About the Game</string>
+    <string name="InsData">The object of the game is to meet customer demand for cases of beer through the distribution side of a multi-stage supply chain with minimal expenditure on back orders and inventory. There are four stages, manufacturer, distributor, supplier, retailer, with a two-week communication gap of orders toward the upstream and a two-week supply chain delay of product towards the downstream. There is a one-point cost for holding excess inventory and a one-point cost for any backlog (old backlog + orders - current inventory).</string>
+    <string name="playgame">Let\'s Play</string>
+    <string name="ipthead">Initial Inputs</string>
+    <string name="devs">Developed By :\n Sanjat Mishra\nSaurabh Jain\nSunnihith Topucherela\nNeha Patil\nSneha Swapnil\n Utkarsh Sinha\nVaishak Kamath\nNeelesh Katoch\nDebanjan Paul\n Harnil \nHarshul</string>
+    <string name="guide">Developed under the guidance of Dr.Vijaya Kumar Manupati , VIT University - Vellore</string>
+</resources>
