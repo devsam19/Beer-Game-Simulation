@@ -1,3 +1,3 @@
 # BeerGame
-A working android application of the beer distribution game.
-# Beer-Game-Simulation
+A working android application of the beer distribution game demonstrating bull whip effect.
+
